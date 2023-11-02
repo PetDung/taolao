@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet.D_Flowers</title>
+</head>
+<body>
+    <div class="sound">
+        <audio id="sound" src="./sound/music2.mp3"loop>
+
+
+        </audio>
+    </div>
+    <div id="content" style="text-align: center;">
+        <div class="greetings">
+            <link rel="stylesheet" href="css/style.css">
+            <link rel="icon" href="img/flowers.png" type="image/x-icon">
+            <span>Y</span>
+            <span>O</span>
+            <span>U</span>
+        </div>
+        <div class="description">
+            <span>are the most beautiful flower ❤️</span>
+        </div>
+        <div class="button">
+            <button style="background-color: transparent; border: none;outline: none;">
+                <a  style="font-size: 60px;">❤️</a>
+                <br>
+                <a style="color: white;" >Click here</a>
+            </button>
+            
+        </div>
+    </div>
+</body>
+<script>
+    let btn = document.querySelector(".button");
+    btn.onclick=()=>{
+        fetch('flower.html')
+        .then(response => response.text())
+        .then(html => {
+            document.querySelector("#sound").play();
+            document.getElementById('content').innerHTML = html;
+        });
+    }
+  </script>
+</html>
